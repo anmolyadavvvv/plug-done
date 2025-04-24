@@ -83,4 +83,12 @@ function App() {
   );
 }
 
+{data ? (
+          <div className="timeline">
+            <TimelineItem
+              type ="First commit"
+              date={data.firstCommitDate}
+            />
+
+
 export default App;
