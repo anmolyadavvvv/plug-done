@@ -55,3 +55,33 @@ export const useTooltip = () => {
 
   return { content, visible, showTooltip, hideTooltip };
 };
+
+
+
+useEffect(() => {
+    invoke("getDetails")
+      .then((response) => {
+        console.log("API Response:", response);
+        if (response.error) {
+          setError(response.error);
+        } else {
+          setData(response);
+        }
+      })
+      .catch((err) => {
+        setError("Error invoking function: " + err.message);
+      });
+  }, []);useEffect(() => {
+    invoke("getDetails")
+      .then((response) => {
+        console.log("API Response:", response);
+        if (response.error) {
+          setError(response.error);
+        } else {
+          setData(response);
+        }
+      })
+      .catch((err) => {
+        setError("Error invoking function: " + err.message);
+      });
+  }, []);
