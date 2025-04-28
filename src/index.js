@@ -25,6 +25,13 @@ resolver.define('getDetails', async (req) => {
                 age: formatSpecialCases(now - createdDate),
                 devTime: formatSpecialCases(devTime),
                 revTime: formatSpecialCases(revTime),
+                title: mr.title,
+                assignees: mr.assignees ? mr.assignees.map(a => a.name).join(', ') : 'None',
+                reviewers: mr.reviewers ? mr.reviewers.map(r => r.name).join(', ') : 'None',
+                age: formatSpecialCases(now - createdDate),
+                devTime: formatSpecialCases(devTime),
+                revTime: formatSpecialCases(revTime),
+
             };
         });
 
